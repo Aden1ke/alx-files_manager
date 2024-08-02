@@ -1,0 +1,23 @@
+{
+  "type": "module",
+  "name": "file_manager",
+  "version": "1.0.0",
+  "description": "helps to learn languages",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "dev": "node"
+  },
+  "repository": {
+    "type": "git",
+    "url": "file_manager"
+  },
+  "keywords": [
+    "javascript"
+  ],
+  "author": "sarah, and israel",
+  "license": "ISC",
+  "dependencies": {
+    "redis": "^4.7.0"
+  }
+}
