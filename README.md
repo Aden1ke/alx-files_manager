@@ -74,7 +74,6 @@ mandatory
 Inside the folder utils, create a file redis.js that contains the class RedisClient.
 
 RedisClient should have:
-
 the constructor that creates a client to Redis:
 any error of the redis client must be displayed in the console (you should use on('error') of the redis client)
 a function isAlive that returns true when the connection to Redis is a success otherwise, false
