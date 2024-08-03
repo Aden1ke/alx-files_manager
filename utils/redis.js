@@ -16,22 +16,21 @@ class RedisClient {
 	  }
 
 
-	async get(key) {
+	async get (key) {
 		try {
-			return await this.client.get(key);
-		} catch (error) {
-			return null;
-		}
-	}
-
-	async set (key, value, duration) {
-		try {
-			return await this.client.set(key, value, duration)
-			await redisSet(key, value);
+			return await this.client.get(key)
 		}catch(error) {
 			return null;
 		}
 	}
+	async set (key, value, duration) {
+		try {
+			return await this.client.set(key, value, duration)
+		}catch(error) {
+			
+		}
+	}
+	
 	async del (key) {
 		try {
 			return await this.client.del(key)
