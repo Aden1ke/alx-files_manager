@@ -7,29 +7,20 @@ class RedisClient {
 			console.log(`Redis client not connected to server: ${error}`);
 		});
 	}
-
-	  isAlive() {
-		  if (this.client.ping) {
-			  return true;
-		  }
-		  return false;
-	  }
-
-
-	async get(key) {
+	isAlive() {
+		return this.connected;
+	}
+	async get (key) {
 		try {
-			return await this.client.get(key);
-		} catch (error) {
+			return await this.client.get(key)
+		}catch(error) {
 			return null;
 		}
 	}
-
 	async set (key, value, duration) {
 		try {
 			return await this.client.set(key, value, duration)
-			await redisSet(key, value);
 		}catch(error) {
-			return null;
 		}
 	}
 	async del (key) {
