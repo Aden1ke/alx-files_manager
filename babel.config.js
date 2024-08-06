@@ -9,8 +9,4 @@ module.exports = {
         },
       ],
     ],
-<<<<<<< HEAD
 };
-=======
-};
->>>>>>> origin/main

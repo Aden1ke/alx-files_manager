@@ -64,7 +64,8 @@ class FilesController {
 				localPath: newFile.localPath,
 			});
 		} catch (error) {
-			console.error(error)return res.status(500).json({ error: 'Internal Server Error' });
+			console.error(error);
+			return res.status(500).json({ error: 'Internal Server Error' });
 		}
 	}
 }
