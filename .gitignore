@@ -1,2 +1,6 @@
-
-node_modules
+node_modules/
+package-lock.json
+babel.config.js
+package.json
+.eslintrc.js
+utils/redis.js
