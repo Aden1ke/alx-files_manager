@@ -37,18 +37,24 @@ class UsersController {
 	}
 
 	static async getMe(req, res) {
-		const token = req.header('X-Token');
+		const token = req.headers['x-token'];
+		//console.log(`Token from User: ${token}`);
 		if (!token) {
 			return res.status(401).json({ error: 'Unauthorized' });
 		}
 		try {
 			// retrieve user_id from redisClient
 			const userId = await redisClient.get(`auth_${token}`);
+
+			//console.log(`Token from Redis: ${userId}`);
 			if (!userId) {
 				return res.status(401).json({ error: 'Unauthorized' });
 			}
-			// retrieve user details from mongoDB
-			const user = await dbClient.users.findOne({ _id: userId });
+			//Convert userId to ObjectId
+			const { ObjectId } = require('mongodb');
+			const objectId = new ObjectId(userId);
+			const user = await dbClient.users.findOne({ _id: objectId });
+			//console.log(`User object: ${user}`);
 			if (!user) {
 				return res.status(401).json({ error: 'Unauthorized' });
 			}
