@@ -1,5 +1,14 @@
+<<<<<<< HEAD
 node_modules
 package.json
 .eslintrc.js
 babel.config.js
 package-lock.json
+=======
+node_modules/
+package-lock.json
+babel.config.js
+package.json
+.eslintrc.js
+utils/redis.js
+>>>>>>> 4de7224ea2e099f91295b5a3acd495bba22588d8
