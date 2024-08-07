@@ -20,6 +20,7 @@ router.put('/files/:id/unpublish', FilesController.putUnpublish);
 router.get('/files/:id/data', FilesController.getFile);
 
 //post routes
+router.post('/files', FilesController.postUpload);
 router.post('/users', UsersController.postNew);
 
 module.exports = router;
